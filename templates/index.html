@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pass the Data</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Make things look slick -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <!-- Ensure that Flask can find the file. -->
+  <script src={{ url_for('static', filename='pass_data.js')}}></script>
+</head>
+  <body>
+      <div class="container-fluid">
+        <h2>Passes data all around.</h2>
+        <br>
+        <form class="form-inline" role="form">
+          <div class="form-group">
+            <label for="chickenWings">Pick a Wing:</label>
+            <select class="form-control" name="wing-type" id="chickenWings">
+            </select>
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+        <ul id="dataList"></ul>
+      </div>
+    <br>
+    <p>An excellent chicken wing is {{choice}}</p>
+    <script type="text/javascript">
+        // Load the DOM -> option(s) for select
+        function get_python_data(data) {
+            displayData(data);
+        }
+        displayData({{wing_options|safe}});
+    </script>
+  </body>
+</html>
