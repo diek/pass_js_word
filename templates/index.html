@@ -9,7 +9,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <!-- Ensure that Flask can find the file. -->
-  <script src={{ url_for('static', filename='pass_data.js')}}></script>
 </head>
   <body>
       <div class="container-fluid">
@@ -27,6 +26,7 @@
       </div>
     <br>
     <p>An excellent chicken wing is {{choice}}</p>
+    <script src={{ url_for('static', filename='pass_data.js')}}></script>
     <script type="text/javascript">
         // Load the DOM -> option(s) for select
         function get_python_data(data) {
